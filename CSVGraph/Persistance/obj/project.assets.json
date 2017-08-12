@@ -2266,6 +2266,21 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.NETCore.App": "1.1.2"
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.2"
+        }
       }
     }
   },
@@ -7029,10 +7044,22 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
+      "Application >= 1.0.0",
+      "Domain >= 1.0.0",
       "Microsoft.NETCore.App >= 1.1.2"
     ]
   },
@@ -7052,7 +7079,14 @@
       ],
       "frameworks": {
         "netcoreapp1.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\INTERVIEWS\\ENDECO\\CVSGraph\\CSVGraph\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\INTERVIEWS\\ENDECO\\CVSGraph\\CSVGraph\\Domain\\Domain.csproj"
+            },
+            "D:\\INTERVIEWS\\ENDECO\\CVSGraph\\CSVGraph\\Application\\Application.csproj": {
+              "projectPath": "D:\\INTERVIEWS\\ENDECO\\CVSGraph\\CSVGraph\\Application\\Application.csproj"
+            }
+          }
         }
       }
     },

@@ -8768,9 +8768,6 @@
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
-      "files": {
-        "lib/netcoreapp1.1/WebClient.dll": "D:\\INTERVIEWS\\ENDECO\\CVSGraph\\CSVGraph\\WebClient\\bin\\placeholder\\netcoreapp1.1\\WebClient.dll"
-      },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {}
@@ -8780,17 +8777,18 @@
     "frameworks": {
       "netcoreapp1.1": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
+          "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "1.1.2"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "1.1.2",
+            "autoReferenced": true
           },
           "Microsoft.ApplicationInsights.AspNetCore": {
             "target": "Package",
             "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore": {
-            "target": "Package",
-            "version": "1.1.2"
           },
           "Microsoft.AspNetCore.StaticFiles": {
             "target": "Package",
