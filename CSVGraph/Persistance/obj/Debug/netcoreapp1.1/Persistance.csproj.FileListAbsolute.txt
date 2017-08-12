@@ -1,0 +1,16 @@
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Persistance.deps.json
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Persistance.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Persistance.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Application.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Domain.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Application.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Domain.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\obj\Debug\netcoreapp1.1\Persistance.csprojResolveAssemblyReference.cache
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\obj\Debug\netcoreapp1.1\Persistance.AssemblyInfo.cs
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\obj\Debug\netcoreapp1.1\Persistance.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\obj\Debug\netcoreapp1.1\Persistance.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\xunit.runner.utility.netstandard15.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netstandard15.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Persistance.runtimeconfig.json
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Persistance\bin\Debug\netcoreapp1.1\Persistance.runtimeconfig.dev.json

@@ -6,3 +6,4 @@ D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\WebClient\bin\Debug\netcoreapp1.1\WebClie
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\WebClient\obj\Debug\netcoreapp1.1\WebClient.AssemblyInfo.cs
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\WebClient\obj\Debug\netcoreapp1.1\WebClient.dll
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\WebClient\obj\Debug\netcoreapp1.1\WebClient.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\WebClient\obj\Debug\netcoreapp1.1\WebClient.csprojResolveAssemblyReference.cache
