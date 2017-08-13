@@ -6,6 +6,11 @@ namespace Persistance.Stocks
 {
     public class StockRepositoryTests
     {
+        public StockRepositoryTests()
+        {
+            // Setup
+
+        }
         [Fact]
         public void TestConstructorShouldCreateRepository()
         {
