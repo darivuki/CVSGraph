@@ -9,7 +9,17 @@ namespace Persistance.Shared
 {
     public class DatabaseContext : DbContext, IDatabaseContext
     {
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        {
+            
+        }
+
         public DbSet<Stock> Stocks { get; set; }
+
+        public bool EnsureDatabaseCreated()
+        {
+            return Database.EnsureCreated();
+        }
 
         public void Save()
         {
