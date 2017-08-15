@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stockChart {
+  width:1024px;
+  height:768px;
+  top: 50px;
+}

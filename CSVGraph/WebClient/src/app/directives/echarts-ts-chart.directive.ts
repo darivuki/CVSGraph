@@ -1,5 +1,6 @@
 import {
-  Directive, ElementRef, Input, OnInit, HostBinding, OnChanges, OnDestroy
+  Directive, ElementRef, Input, OnInit,
+  HostBinding, OnChanges, OnDestroy, Renderer2
 } from '@angular/core';
 
 import * as echarts from 'echarts';
@@ -14,15 +15,17 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   private chart: ECharts;
 
   @Input() options: EChartOption;
+  @Input() showChart: boolean
 
   constructor(private el: ElementRef) {
-    console.log(el);
     this.chart = echarts.init(this.el.nativeElement, 'vintage');
   }
 
   ngOnChanges(changes) {
-    if (this.options) {
+    if (this.options && this.showChart === true) {
       this.chart.setOption(this.options);
+    } else if (this.showChart === false) {
+      this.chart.dispose();
     }
   }
 
@@ -30,6 +33,8 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
+    debugger;
+    this.chart.dispose();
   }
 
 }

@@ -7,6 +7,7 @@ import 'rxjs/add/operator/do';
 import * as echarts from 'echarts';
 import { stockChartOptions } from "./shared/echart_ts_chart_options/stock_chart_options";
 import { StocksService } from "./services/stocks.service";
+import { IStocks } from "./shared/models/stocks";
 
 @Component({
   selector: 'app-root',
@@ -16,39 +17,22 @@ import { StocksService } from "./services/stocks.service";
 export class AppComponent implements OnInit {
 
   options: Object = undefined;
-  private minStocks: IStock[];
-  private maxStocks: IStock[];
+  showChart: boolean = true;
 
-  constructor(private stocksService: StocksService) {
-
-  }
+  constructor(private stocksService: StocksService) { }
 
   ngOnInit() {
-    this.stocksService.getStocks()
-      .subscribe(result => {
-        this.options = stockChartOptions(result);
-      },
-    error => {
-      console.log(error);
-    });
-
+    // this.initializeStockChart((data: IStocks) => {
+    //   if (!!data && data.stocks.length > 0) {
+    //     this.options = stockChartOptions(data);
+    //     this.showChart = true;
+    //   }
+    // });
   }
 
-  formatStocks = (stock: IStock) =>
-    [Date.parse(stock.date), stock.marketPrice];
-  // stocks.map(stock => [Date.parse(stock.date), stock.marketPrice])
-
-  findMinMaxStockPrice = (stocks: IStock[]) => {
-    let maxValues = new Array<IStock>();
-    let minValues = new Array<IStock>();
-
-    const prices = stocks.map(x => x.marketPrice)
-    const maxValue = Math.max(...prices);
-    const minValue = Math.min(...prices);
-
-    maxValues = stocks.filter(x => x.marketPrice === maxValue);
-    minValues = stocks.filter(x => x.marketPrice === minValue);
-
-    return [minValues, maxValues];
-  }
+  // initializeStockChart = (callback) => {
+  //   this.stocksService
+  //     .getStocks()
+  //     .subscribe(callback);
+  // }
 }

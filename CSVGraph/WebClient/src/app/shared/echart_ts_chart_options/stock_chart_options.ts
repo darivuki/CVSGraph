@@ -1,10 +1,24 @@
 
 import { EChartOption } from "echarts";
 import { round } from "../helpers/round";
-import { IStocks } from "../models/stocks";
+import { IStocks, StocksNull } from "../models/stocks";
+import { IStock } from "../models/stock";
 
-export const stockChartOptions = (data: IStocks, ): EChartOption =>
-  ({
+const getMostExpensivePeriodCoord = (data: IStocks = undefined) => {
+debugger;
+  return data.mostExpensiveHour.length > 0 ? [[
+          { coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
+          { coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
+        ]]
+        : [[
+          { coord: undefined },
+          { coord: undefined }
+         ]]
+}
+
+export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOption => {
+
+  return ({
     title: {
       text: 'Stock Price (min, max, most expensive hour)',
     },
@@ -15,10 +29,8 @@ export const stockChartOptions = (data: IStocks, ): EChartOption =>
       }
     },
     legend: {
-      // data: ['stock price'],
       data: [{
         name: 'stock price',
-        // compulsorily set icon as a circle
         icon: 'circle',
       }],
       x: 'right'
@@ -72,22 +84,24 @@ export const stockChartOptions = (data: IStocks, ): EChartOption =>
           normal: {
             width: 3,
             shadowColor: 'rgba(0,0,0,0.4)',
-            shadowBlur: 10,
-            shadowOffsetY: 10
+            shadowBlur: 5,
+            shadowOffsetY: 10,
+            type: 'dotted',
           }
       },
       markLine: {
         lineStyle: {
           normal: {
-            color: "#3fff00",
+            color: "#293C55",
             type: 'solid',
             width: 4
           }
         },
-        data: [[
-          { coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
-          { coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
-        ]]
+        // data: [[
+        //   { coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
+        //   { coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
+        // ]]
+        data: getMostExpensivePeriodCoord(data)
       },
       markPoint: {
         symbolOffset: [0, '-20%'],
@@ -104,4 +118,6 @@ export const stockChartOptions = (data: IStocks, ): EChartOption =>
       },
       data: data.stocks.map(x => x.marketPrice).map(x => round(x, 2))
     }]
-  });
+  })
+
+}

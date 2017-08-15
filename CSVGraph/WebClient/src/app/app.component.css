@@ -1,4 +1,4 @@
-:host {
+/* :host {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,6 +7,5 @@
 #stockChart {
   width:1024px;
   height:768px;
-  max-width: 50%;
   top: 50px;
-}
+} */

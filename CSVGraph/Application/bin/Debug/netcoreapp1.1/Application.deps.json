@@ -1,13 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "e8bedcbe24138cd8036bd992b47f8a5a5af7c23f"
+    "signature": "d8d0789824e547d979f7a85d7f18932a9a3ddc3d"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.1": {
       "application/1.0.0": {
         "dependencies": {
+          "CsvHelper": "2.16.3",
           "Domain": "1.0.0",
           "Microsoft.NET.Test.Sdk": "15.3.0",
           "Moq": "4.7.99",
@@ -27,6 +28,11 @@
         },
         "runtime": {
           "lib/netstandard1.3/Castle.Core.dll": {}
+        }
+      },
+      "csvhelper/2.16.3": {
+        "runtime": {
+          "lib/netstandard1.3/CsvHelper.dll": {}
         }
       },
       "microsoft.dotnet.platformabstractions/1.1.0": {
@@ -453,6 +459,13 @@
       "sha512": "sha512-O+88tWlRvtYLTn4dgAENyOgaLcExeox73ledI92d72z4U9IGSiiO8n/gnTnWgEMpBuXIdcyzrXHdGtn0c5Dz/A==",
       "path": "castle.core/4.1.1",
       "hashPath": "castle.core.4.1.1.nupkg.sha512"
+    },
+    "csvhelper/2.16.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RTxNM9Q6MDg3WpGorrK7E9eXsjGhtDLYx5dBuHol5kHDpu7kND2NveHDVCFQgGxowuDB57ettaOEn3EJqiJ1oQ==",
+      "path": "csvhelper/2.16.3",
+      "hashPath": "csvhelper.2.16.3.nupkg.sha512"
     },
     "microsoft.dotnet.platformabstractions/1.1.0": {
       "type": "package",

@@ -69,12 +69,17 @@ namespace Persistance.Shared
                 new Stock(DateTime.Parse("10/01/2017 23:30"), 50.29000092m)
             };
 
-            foreach (var stock in stocks)
-            {
-                this.Add(stock);
-            }
+            this.AddRange(stocks);
 
             this.SaveChanges();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Stock>()
+                        .HasIndex(p => new { p.Date, p.MarketPrice }).IsUnique();
+            modelBuilder.Entity<Stock>()
+                        .HasKey(x => x.Id);
         }
 
         public void Save()

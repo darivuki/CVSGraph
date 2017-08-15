@@ -8,7 +8,6 @@ namespace Domain.Stocks
 {
     public class Stock : IEntity
     {
-        [Key]
         public Guid Id { get; private set; }
 
         public decimal MarketPrice { get; private set; }

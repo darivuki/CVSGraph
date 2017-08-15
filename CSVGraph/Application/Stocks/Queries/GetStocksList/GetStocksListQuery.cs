@@ -33,8 +33,8 @@ namespace Application.Stocks.Queries.GetStocksList
             stocksDTO.Stocks = stocks;
 
             // Calculate additional statistics in memory
-            stocksDTO.MostExpensiveHour = (includeMostExpensiveHour.HasValue == false || includeMostExpensiveHour.Value == false) ? null 
-                                          : stocks                                                                                       
+            stocksDTO.MostExpensiveHour = (includeMostExpensiveHour.HasValue == false || includeMostExpensiveHour.Value == false) ? null
+                                          : stocks
                                                   .GroupBy(x => x.Date.Hour)
                                                   .Select((x) => new
                                                   {
@@ -42,14 +42,15 @@ namespace Application.Stocks.Queries.GetStocksList
                                                       StocksByHour = x.Select(y => y).ToList(),
                                                   })
                                                   .Aggregate((agg, next) => next.Sum >= agg.Sum ? next : agg)
-                                          .       StocksByHour;
+                                          .StocksByHour;
 
             // Append potential stock duplicates in MarketPrice so that we return multiple results with the same value
-            stocksDTO.MostExpensiveHour = stocksDTO.Stocks
-                .Join(stocksDTO.MostExpensiveHour, f => f.MarketPrice, s => s.MarketPrice, (fir, sec) => fir)
-                .GroupBy(x => x.Date)
-                .Select(y => y.First())
-                .ToList(); ;
+            stocksDTO.MostExpensiveHour =
+                      stocksDTO.Stocks
+                     .Join(stocksDTO.MostExpensiveHour, f => f.MarketPrice, s => s.MarketPrice, (fir, sec) => fir)
+                     .GroupBy(x => x.Date)
+                     .Select(y => y.First())
+                     .ToList(); ;
 
             return stocksDTO;
         }

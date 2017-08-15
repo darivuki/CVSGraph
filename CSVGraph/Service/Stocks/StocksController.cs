@@ -1,4 +1,6 @@
-﻿using Application.Stocks.Queries.GetStocksList;
+﻿using Application.Stocks.Commands.UploadStocks;
+using Application.Stocks.Queries.GetStocksList;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebService.Stocks
@@ -7,9 +9,11 @@ namespace WebService.Stocks
     public class StocksController : Controller
     {
         private readonly IGetStocksListQuery _query;
+        private readonly IUploadStocksCommand _command;
 
-        public StocksController(IGetStocksListQuery query)
+        public StocksController(IGetStocksListQuery query, IUploadStocksCommand command)
         {
+            this._command = command;
             this._query = query;
         }
 
@@ -23,10 +27,13 @@ namespace WebService.Stocks
             return Ok(result);
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        [Route("upload/{file}")]
+        public IActionResult Post(IFormFile file)
         {
+            _command.Execute(new UploadStocksModel(file.OpenReadStream()));
+
+            return Ok();
         }
     }
 }

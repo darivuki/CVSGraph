@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Application.Stocks.Queries.GetStocksList;
 using Persistance.Stocks;
 using Application.Interfaces.Persitence;
+using Application.Stocks.Commands.UploadStocks;
 
 namespace Service
 {
@@ -33,22 +34,23 @@ namespace Service
         public void ConfigureServices(IServiceCollection services)
         {
             // Add custom services.
+            services.AddScoped<IUploadStocksCommand, UploadStocksCommand>();
             services.AddScoped<IGetStocksListQuery, GetStocksListQuery>();
             services.AddScoped<IStockRepository, StockRepository>();
             services.AddScoped<IDatabaseContext, DatabaseContext>();
+
             // Add framework services.
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
-            services.AddMvc();
-            // Add CORS
             services.AddCors();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IDatabaseContext dbContext)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddConsole();
 
             // Shows UseCors with CorsPolicyBuilder.
             app.UseCors(builder =>
