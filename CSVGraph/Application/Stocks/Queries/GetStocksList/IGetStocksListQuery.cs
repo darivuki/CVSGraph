@@ -6,6 +6,6 @@ namespace Application.Stocks.Queries.GetStocksList
 {
     public interface IGetStocksListQuery
     {
-        List<StockModel> Execute();
+        StocksDTO Execute(bool? includeMostExpensiveHour);
     }
 }

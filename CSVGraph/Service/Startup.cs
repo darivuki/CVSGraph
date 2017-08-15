@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Persistance.Shared;
 using Microsoft.EntityFrameworkCore;
+using Application.Stocks.Queries.GetStocksList;
+using Persistance.Stocks;
+using Application.Interfaces.Persitence;
 
 namespace Service
 {
@@ -30,6 +33,8 @@ namespace Service
         public void ConfigureServices(IServiceCollection services)
         {
             // Add custom services.
+            services.AddScoped<IGetStocksListQuery, GetStocksListQuery>();
+            services.AddScoped<IStockRepository, StockRepository>();
             services.AddScoped<IDatabaseContext, DatabaseContext>();
             // Add framework services.
             services.AddDbContext<DatabaseContext>(options =>

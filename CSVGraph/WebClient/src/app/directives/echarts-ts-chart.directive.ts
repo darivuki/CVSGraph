@@ -16,6 +16,7 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   @Input() options: EChartOption;
 
   constructor(private el: ElementRef) {
+    console.log(el);
     this.chart = echarts.init(this.el.nativeElement, 'vintage');
   }
 

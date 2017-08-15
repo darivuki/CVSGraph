@@ -9,7 +9,7 @@ namespace Persistance.Shared
         DbSet<Stock> Stocks { get; set; }
 
         DbSet<T> Set<T>() where T : class, IEntity;
-        bool EnsureDatabaseCreated();
+        void EnsureDatabaseCreated();
         void Save();
     }
 }

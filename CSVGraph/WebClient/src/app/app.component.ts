@@ -15,7 +15,7 @@ import { StocksService } from "./services/stocks.service";
 })
 export class AppComponent implements OnInit {
 
-  options: Object;
+  options: Object = undefined;
   private minStocks: IStock[];
   private maxStocks: IStock[];
 
@@ -26,9 +26,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.stocksService.getStocks()
       .subscribe(result => {
-        console.log(result);
         this.options = stockChartOptions(result);
-      });
+      },
+    error => {
+      console.log(error);
+    });
 
   }
 

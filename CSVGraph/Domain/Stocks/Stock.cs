@@ -15,7 +15,7 @@ namespace Domain.Stocks
 
         public DateTime Date { get; private set; }
 
-        public Stock(decimal marketPrice, DateTime dateTime)
+        public Stock(DateTime dateTime, decimal marketPrice)
         {
             this.Id = Guid.NewGuid();
             this.MarketPrice = marketPrice;

@@ -1,4 +1,9 @@
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\xunit.runner.utility.netstandard15.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netstandard15.dll
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.deps.json
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.runtimeconfig.json
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.runtimeconfig.dev.json
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.dll
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.pdb
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Domain.dll
@@ -7,8 +12,3 @@ D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Appli
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Application.AssemblyInfo.cs
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Application.dll
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Application.pdb
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\xunit.runner.utility.netstandard15.dll
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netstandard15.dll
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.runtimeconfig.json
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Application.runtimeconfig.dev.json
