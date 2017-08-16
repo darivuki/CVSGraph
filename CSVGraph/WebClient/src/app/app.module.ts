@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { EchartsTsChartDirective } from './directives/echarts-ts-chart.directive';
 
 import { StocksService } from './services/stocks.service';
+import { FileUploadService } from './services/file-upload.service';
+import { FileUploadSubjectService } from './services/subject-services/file-upload-subject.service';
+
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { ChartComponent } from './components/chart/chart.component';
+import { EchartsTsChartDirective } from './directives/echarts-ts-chart.directive';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,7 @@ import { ChartComponent } from './components/chart/chart.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [StocksService],
+  providers: [StocksService, FileUploadSubjectService, FileUploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

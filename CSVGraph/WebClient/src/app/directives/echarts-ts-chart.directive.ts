@@ -22,7 +22,7 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes) {
-    if (this.options && this.showChart === true) {
+      if (this.options && this.showChart === true) {
       this.chart.setOption(this.options);
     } else if (this.showChart === false) {
       this.chart.dispose();

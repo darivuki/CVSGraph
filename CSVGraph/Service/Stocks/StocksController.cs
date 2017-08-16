@@ -28,7 +28,7 @@ namespace WebService.Stocks
         }
 
         [HttpPost]
-        [Route("upload/{file}")]
+        [Route("upload")]
         public IActionResult Post(IFormFile file)
         {
             _command.Execute(new UploadStocksModel(file.OpenReadStream()));

@@ -1,7 +1,6 @@
 ﻿using Application.Interfaces.Persitence;
-using System;
+using Application.Stocks.Shared;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Application.Stocks.Queries.GetStocksList
@@ -26,31 +25,22 @@ namespace Application.Stocks.Queries.GetStocksList
                              Date = stock.Date,
                              MarketPrice = stock.MarketPrice
                          })
-                         .OrderBy(x => x.Date)
+                         .OrderBy(x => x.Date) // Life is easier when the data is ordered
                          .ToList();
 
             // Append to DTO
             stocksDTO.Stocks = stocks;
 
-            // Calculate additional statistics in memory
-            stocksDTO.MostExpensiveHour = (includeMostExpensiveHour.HasValue == false || includeMostExpensiveHour.Value == false) ? null
-                                          : stocks
-                                                  .GroupBy(x => x.Date.Hour)
-                                                  .Select((x) => new
-                                                  {
-                                                      Sum = x.Sum(y => y.MarketPrice),
-                                                      StocksByHour = x.Select(y => y).ToList(),
-                                                  })
-                                                  .Aggregate((agg, next) => next.Sum >= agg.Sum ? next : agg)
-                                          .StocksByHour;
 
-            // Append potential stock duplicates in MarketPrice so that we return multiple results with the same value
-            stocksDTO.MostExpensiveHour =
-                      stocksDTO.Stocks
-                     .Join(stocksDTO.MostExpensiveHour, f => f.MarketPrice, s => s.MarketPrice, (fir, sec) => fir)
-                     .GroupBy(x => x.Date)
-                     .Select(y => y.First())
-                     .ToList(); ;
+            stocksDTO.MostExpensiveHour = (includeMostExpensiveHour.HasValue == false || includeMostExpensiveHour.Value == false) ? null
+                                           : stocks.Zip(stocks.Skip(1), (a, b) => new
+                                           {
+                                               Sum = a.MarketPrice + b.MarketPrice,
+                                               Stocks = new[] { a, b }
+                                           })
+                                           .Aggregate((agg, next) => next.Sum >= agg.Sum ? next : agg)
+                                           .Stocks
+                                           .ToList();
 
             return stocksDTO;
         }

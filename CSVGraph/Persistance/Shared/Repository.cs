@@ -35,6 +35,11 @@ namespace Persistance.Shared
             _database.Set<T>().Add(entity);
         }
 
+        public void AddRange(IEnumerable<T> entities)
+        {
+            _database.Set<T>().AddRange(entities);
+        }
+
         public void Remove(T entity)
         {
             _database.Set<T>().Remove(entity);

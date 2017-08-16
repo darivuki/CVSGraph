@@ -1,11 +1,21 @@
-/* :host {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+:host {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 }
 
-#stockChart {
-  width:1024px;
-  height:768px;
-  top: 50px;
-} */
+
+chart {
+   /* This will be twice as big as the small item. */
+   -webkit-flex: 2 0 0;
+   flex: 2 0 0;
+}
+file-upload {
+   -webkit-flex: 1 0 0;
+   flex: 1 0 0;
+}

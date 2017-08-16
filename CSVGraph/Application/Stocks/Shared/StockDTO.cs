@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Stocks.Queries.GetStocksList
+namespace Application.Stocks.Shared
 {
     public class StockDTO
     {

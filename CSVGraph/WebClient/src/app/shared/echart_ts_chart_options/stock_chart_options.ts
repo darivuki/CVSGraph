@@ -5,7 +5,6 @@ import { IStocks, StocksNull } from "../models/stocks";
 import { IStock } from "../models/stock";
 
 const getMostExpensivePeriodCoord = (data: IStocks = undefined) => {
-debugger;
   return data.mostExpensiveHour.length > 0 ? [[
           { coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
           { coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
@@ -66,7 +65,7 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
     }],
     yAxis: [{
       type: 'value',
-      max: 250,
+      max: 700,
       name: 'Price:',
       min: 0,
       interval: 25,
@@ -82,11 +81,11 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
       showSymbol: false,
       lineStyle: {
           normal: {
-            width: 3,
-            shadowColor: 'rgba(0,0,0,0.4)',
-            shadowBlur: 5,
-            shadowOffsetY: 10,
-            type: 'dotted',
+            width: 2,
+            // shadowColor: 'rgba(0,0,0,0.4)',
+            // shadowBlur: 2,
+            // shadowOffsetY: 10,
+            type: 'line',
           }
       },
       markLine: {
@@ -97,10 +96,6 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
             width: 4
           }
         },
-        // data: [[
-        //   { coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
-        //   { coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
-        // ]]
         data: getMostExpensivePeriodCoord(data)
       },
       markPoint: {

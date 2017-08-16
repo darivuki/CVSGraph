@@ -37,6 +37,7 @@ namespace Service
             services.AddScoped<IUploadStocksCommand, UploadStocksCommand>();
             services.AddScoped<IGetStocksListQuery, GetStocksListQuery>();
             services.AddScoped<IStockRepository, StockRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDatabaseContext, DatabaseContext>();
 
             // Add framework services.
