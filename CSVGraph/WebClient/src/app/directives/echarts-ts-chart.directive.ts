@@ -15,17 +15,19 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   private chart: ECharts;
 
   @Input() options: EChartOption;
-  @Input() showChart: boolean
+  @Input() isGettingStocksData: boolean;
 
   constructor(private el: ElementRef) {
     this.chart = echarts.init(this.el.nativeElement, 'vintage');
   }
 
   ngOnChanges(changes) {
-      if (this.options && this.showChart === true) {
+    debugger;
+    if (this.isGettingStocksData) {
+      this.chart.showLoading();
+    } else if (this.options) {
+      this.chart.hideLoading();
       this.chart.setOption(this.options);
-    } else if (this.showChart === false) {
-      this.chart.dispose();
     }
   }
 
@@ -33,7 +35,6 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    debugger;
     this.chart.dispose();
   }
 

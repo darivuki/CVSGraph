@@ -1,26 +1,38 @@
+import { StockSubjectService } from './stock-subject.service';
 import { FileUploadService } from './../file-upload.service';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { Observable, BehaviorSubject } from 'rxjs/Rx';
 
 @Injectable()
 export class FileUploadSubjectService {
 
-    constructor(private fileUploadService: FileUploadService) {
-    }
-
     // Observable sources
-    private shouldDisplayAnnouncedSource = new BehaviorSubject(false);
-
+    private isUploadingFileAnnouncedSource = new BehaviorSubject(false);
     // Observable streams
-    shouldDisplayAnnounced$ = this.shouldDisplayAnnouncedSource.asObservable();
+    isUploadingFileAnnounced$ = this.isUploadingFileAnnouncedSource.asObservable();
+
+    constructor(
+      private fileUploadService: FileUploadService,
+      private  stocksSubjectService: StockSubjectService) {
+    }
 
     // Service commands
     announceIsUploadingFile(isUploadingFile: boolean) {
         // announce active sessions
-        this.shouldDisplayAnnouncedSource.next(isUploadingFile);
+        this.isUploadingFileAnnouncedSource.next(isUploadingFile);
     }
 
-    announceUploadingFile(){
-      this.fileUploadService.uploadFile();
+    announceUploadFile(formData: FormData) {
+      this.isUploadingFileAnnouncedSource.next(true);
+
+        Observable.fromPromise(this.fileUploadService.postUploadFile(formData))
+          .subscribe(x => {
+            this.isUploadingFileAnnouncedSource.next(false);
+            this.stocksSubjectService.announceGetStocks();
+          },
+        error => {
+          this.isUploadingFileAnnouncedSource.next(false);
+          console.log(error)
+        })
     }
 }

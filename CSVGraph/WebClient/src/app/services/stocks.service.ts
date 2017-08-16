@@ -10,6 +10,6 @@ export class StocksService {
 
   constructor(private http: HttpClient) { }
 
-  getStocks = (includeMostExpensiveHour: boolean = true) =>
+  getStocks = (includeMostExpensiveHour: boolean = true) => // added default parameter here for simplicity
     this.http.get<IStocks>(webApiBaseURL(`stocks?includeMostExpensiveHour=${includeMostExpensiveHour}`));
 }

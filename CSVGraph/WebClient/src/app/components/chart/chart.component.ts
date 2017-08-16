@@ -1,3 +1,4 @@
+import { StockSubjectService } from './../../services/subject-services/stock-subject.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { StocksService } from "../../services/stocks.service";
 import { IStocks } from "../../shared/models/stocks";
@@ -9,26 +10,25 @@ import { stockChartOptions } from "../../shared/echart_ts_chart_options/stock_ch
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
+  options: Object = stockChartOptions(); // Initialize char without data
+  isGettingStocksData: boolean = true;
 
-  options: Object = stockChartOptions();
-  @Input()
-  showChart: boolean;
-
-  constructor(private stocksService: StocksService) { }
+  constructor(private stocksSubjectService: StockSubjectService) { }
 
   ngOnInit() {
-    this.initializeStockChart();
-  }
 
-  initializeStockChart = () => {
-    this.stocksService
-      .getStocks()
-      .subscribe((data: IStocks) => {
-        //if (!!data && data.stocks.length > 0) {
-          this.options = stockChartOptions(data);
-          this.showChart = true;
-        //}
+    this.stocksSubjectService.isGettingstocksDataAnnounced$
+      .skip(1)
+      .subscribe(x => {
+         this.isGettingStocksData = x;
+      })
+
+    this.stocksSubjectService.stocksDataAnnounced$
+      .subscribe(data => {
+        this.options = stockChartOptions(data);
       });
-  }
 
+    this.stocksSubjectService.announceGetStocks();
+
+  }
 }
