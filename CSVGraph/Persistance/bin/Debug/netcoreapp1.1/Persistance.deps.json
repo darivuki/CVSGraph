@@ -614,6 +614,7 @@
       },
       "application/1.0.0": {
         "dependencies": {
+          "Common": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.NET.Test.Sdk": "15.3.0",
           "Moq": "4.7.99",
@@ -622,6 +623,11 @@
         },
         "runtime": {
           "Application.dll": {}
+        }
+      },
+      "common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
         }
       },
       "domain/1.0.0": {
@@ -981,6 +987,11 @@
       "hashPath": "xunit.runner.visualstudio.2.2.0.nupkg.sha512"
     },
     "application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

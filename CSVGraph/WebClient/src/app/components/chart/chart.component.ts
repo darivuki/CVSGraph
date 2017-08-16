@@ -12,26 +12,23 @@ export class ChartComponent implements OnInit {
 
   options: Object = stockChartOptions();
   @Input()
-  showChart: boolean = true;
+  showChart: boolean;
 
   constructor(private stocksService: StocksService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.initializeStockChart((data: IStocks) => {
-        if (!!data && data.stocks.length > 0) {
-          this.options = stockChartOptions(data);
-          this.showChart = true;
-        }
-      });
-    }, 5000);
-
+    this.initializeStockChart();
   }
 
-  initializeStockChart = (callback) => {
+  initializeStockChart = () => {
     this.stocksService
       .getStocks()
-      .subscribe(callback);
+      .subscribe((data: IStocks) => {
+        //if (!!data && data.stocks.length > 0) {
+          this.options = stockChartOptions(data);
+          this.showChart = true;
+        //}
+      });
   }
 
 }

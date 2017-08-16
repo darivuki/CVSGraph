@@ -1,0 +1,7 @@
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\bin\Debug\netcoreapp1.1\Common.deps.json
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\bin\Debug\netcoreapp1.1\Common.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\bin\Debug\netcoreapp1.1\Common.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\obj\Debug\netcoreapp1.1\Common.csprojResolveAssemblyReference.cache
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\obj\Debug\netcoreapp1.1\Common.AssemblyInfo.cs
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\obj\Debug\netcoreapp1.1\Common.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Common\obj\Debug\netcoreapp1.1\Common.pdb

@@ -15,14 +15,14 @@ namespace Persistance.Shared
 
         public void EnsureDatabaseCreated()
         {
-            //Database.EnsureDeleted();
-            //Database.EnsureCreated();
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Stock>()
-                        .HasIndex(p => new { p.Date, p.MarketPrice }).IsUnique();
+            //modelBuilder.Entity<Stock>()
+            //            .HasIndex(p => new { p.Date, p.MarketPrice }).IsUnique();
             modelBuilder.Entity<Stock>()
                         .HasKey(x => x.Id);
         }

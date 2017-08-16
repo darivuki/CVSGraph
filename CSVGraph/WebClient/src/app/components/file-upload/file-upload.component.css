@@ -1,5 +1,32 @@
 :host {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #293C55;
+  margin-right: 150px;
+  height: 100vh;
 }
+
+input[type=file] {
+
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 24px;
+  background: #A9334C ;
+  padding: 40px 20px 40px 20px;
+  text-decoration: none;
+  border: none;
+  outline:none;
+  cursor: pointer;
+}
+
+input[type=file]:hover {
+  text-decoration: none;
+  border-bottom: 2px white solid;
+  border-top: 2px white solid;
+}
+
+
+/* #A9334C */

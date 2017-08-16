@@ -16,23 +16,8 @@ import { IStocks } from "./shared/models/stocks";
 })
 export class AppComponent implements OnInit {
 
-  options: Object = undefined;
-  showChart: boolean = true;
-
   constructor(private stocksService: StocksService) { }
 
   ngOnInit() {
-    // this.initializeStockChart((data: IStocks) => {
-    //   if (!!data && data.stocks.length > 0) {
-    //     this.options = stockChartOptions(data);
-    //     this.showChart = true;
-    //   }
-    // });
   }
-
-  // initializeStockChart = (callback) => {
-  //   this.stocksService
-  //     .getStocks()
-  //     .subscribe(callback);
-  // }
 }

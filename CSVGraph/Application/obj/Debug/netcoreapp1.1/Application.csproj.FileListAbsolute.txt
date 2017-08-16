@@ -12,3 +12,5 @@ D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Appli
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Application.AssemblyInfo.cs
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Application.dll
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\obj\Debug\netcoreapp1.1\Application.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Common.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Application\bin\Debug\netcoreapp1.1\Common.pdb

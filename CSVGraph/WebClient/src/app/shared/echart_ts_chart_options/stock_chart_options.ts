@@ -4,15 +4,26 @@ import { round } from "../helpers/round";
 import { IStocks, StocksNull } from "../models/stocks";
 import { IStock } from "../models/stock";
 
+const getMinMaxCoord = (data: IStocks) => {
+  if (data.lowestStock === null || data.highestStock === null) {
+    return undefined;
+  }
+  return [
+          { coord: [data.lowestStock.date, data.lowestStock.marketPrice] },
+          { coord: [data.highestStock.date, data.highestStock.marketPrice] }
+      ];
+}
+
 const getMostExpensivePeriodCoord = (data: IStocks = undefined) => {
   return data.mostExpensiveHour.length > 0 ? [[
-          { coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
-          { coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
+          {
+            symbol: 'diamond',
+            coord: [data.mostExpensiveHour[0].date, data.mostExpensiveHour[0].marketPrice] },
+          {
+            symbol: 'diamond',
+            coord: [data.mostExpensiveHour[data.mostExpensiveHour.length - 1].date, data.mostExpensiveHour[data.mostExpensiveHour.length - 1].marketPrice] }
         ]]
-        : [[
-          { coord: undefined },
-          { coord: undefined }
-         ]]
+        : undefined
 }
 
 export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOption => {
@@ -26,13 +37,6 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
       axisPointer: {
         animation: false
       }
-    },
-    legend: {
-      data: [{
-        name: 'stock price',
-        icon: 'circle',
-      }],
-      x: 'right'
     },
     toolbox: undefined,
     dataZoom: [{
@@ -65,7 +69,7 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
     }],
     yAxis: [{
       type: 'value',
-      max: 700,
+      max: 500,
       name: 'Price:',
       min: 0,
       interval: 25,
@@ -81,19 +85,17 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
       showSymbol: false,
       lineStyle: {
           normal: {
-            width: 2,
-            // shadowColor: 'rgba(0,0,0,0.4)',
-            // shadowBlur: 2,
-            // shadowOffsetY: 10,
-            type: 'line',
+            width: 1,
+            type: 'solid',
           }
       },
       markLine: {
+        symbolSize: 20,
         lineStyle: {
           normal: {
             color: "#293C55",
             type: 'solid',
-            width: 4
+            width: 6
           }
         },
         data: getMostExpensivePeriodCoord(data)
@@ -102,14 +104,7 @@ export const stockChartOptions = (data: IStocks = new StocksNull()): EChartOptio
         symbolOffset: [0, '-20%'],
         symbol: 'pin',
         symbolSize: [80, 55],
-        data: [{
-          type: 'max',
-          name: 'Max',
-          value: 'Max'
-        }, {
-          type: 'min',
-          name: 'Min'
-        }]
+        data: getMinMaxCoord(data)
       },
       data: data.stocks.map(x => x.marketPrice).map(x => round(x, 2))
     }]

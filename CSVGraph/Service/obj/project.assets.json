@@ -4596,12 +4596,20 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
+          "Common": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.NET.Test.Sdk": "15.3.0",
           "Microsoft.NETCore.App": "1.1.2",
           "Moq": "4.7.99",
           "xunit": "2.2.0",
           "xunit.runner.visualstudio": "2.2.0"
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.2"
         }
       },
       "Domain/1.0.0": {
@@ -11720,6 +11728,11 @@
       "type": "project",
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
     },
     "Domain/1.0.0": {
       "type": "project",

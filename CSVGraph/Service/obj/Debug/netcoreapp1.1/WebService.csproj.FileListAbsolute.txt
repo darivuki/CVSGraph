@@ -16,3 +16,5 @@ D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\WebServic
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\WebService.AssemblyInfo.cs
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\WebService.dll
 D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\WebService.pdb
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Common.dll
+D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Common.pdb

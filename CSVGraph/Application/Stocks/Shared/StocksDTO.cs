@@ -8,5 +8,7 @@ namespace Application.Stocks.Shared
     {
         public List<StockDTO> Stocks { get; set; } = new List<StockDTO>();
         public List<StockDTO> MostExpensiveHour { get; set; } = new List<StockDTO>();
+        public StockDTO LowestStock { get; internal set; }
+        public StockDTO HighestStock { get; internal set; }
     }
 }
