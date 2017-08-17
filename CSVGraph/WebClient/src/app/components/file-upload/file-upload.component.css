@@ -10,26 +10,6 @@
   min-width: 700px;
 }
 
-input[type=file] {
-
-  font-family: Courier New;
-  color: #ffffff;
-  font-size: 24px;
-  background: #A9334C ;
-  padding: 40px 20px 40px 20px;
-  text-decoration: none;
-  border: none;
-  outline:none;
-  cursor: pointer;
-  width: 100%;
-}
-
-input[type=file]:hover {
-  text-decoration: none;
-  border-bottom: 2px white solid;
-  border-top: 2px white solid;
-}
-
 .spinner {
   width: 100px;
   height: 100px;
@@ -58,4 +38,27 @@ input[type=file]:hover {
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
-/* #A9334C */
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid white;
+  color: white;
+  background-color: #A9334C;
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

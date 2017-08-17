@@ -22,7 +22,6 @@ export class EchartsTsChartDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes) {
-    debugger;
     if (this.isGettingStocksData) {
       this.chart.showLoading();
     } else if (this.options) {
