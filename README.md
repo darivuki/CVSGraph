@@ -13,9 +13,10 @@ Reads data from a provided (structured) sample file, stores it to a database, an
 - npm (5.3.0), NodeJS (8.2.1)
 
 ## Architecture and patterns used
-- Simpple CQRS
+- Simple CQRS architecture
 - Repository and UOW
 - Simple event bus with subject services using RxJS
+- Dependency Injection
 
 ## Building, running, installing...
 
