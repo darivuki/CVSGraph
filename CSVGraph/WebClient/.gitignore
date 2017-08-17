@@ -25,6 +25,11 @@
 !.vscode/extensions.json
 
 # misc
+*.suo
+*.user
+/bin
+/obj
+/.vs
 /wwwroot
 /.sass-cache
 /connect.lock
