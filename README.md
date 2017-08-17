@@ -2,17 +2,17 @@
 
 Reads data from a provided (structured) sample file, stores it to a database, and displays the data in a graph format.
 
-## Technology used:
+## Technology used
 - Visual Studio 2017
 - Asp.net core 1.1
 - Entity framework core 1.1.2
 - Sql server (localDB)
-- Angular CLI, 
-- Typescript, 
+- Angular CLI 
+- Typescript 
 - ECharts
 - npm (5.3.0), NodeJS (8.2.1)
 
-## Architecture and patterns used:
+## Architecture and patterns used
 - Simpple CQRS
 - Repository and UOW
 - Simple event bus with subject services using RxJS
