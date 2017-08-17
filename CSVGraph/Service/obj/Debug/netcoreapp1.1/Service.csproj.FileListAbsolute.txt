@@ -1,9 +1,0 @@
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Service.deps.json
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Service.runtimeconfig.json
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Service.runtimeconfig.dev.json
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Service.dll
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\bin\Debug\netcoreapp1.1\Service.pdb
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\Service.AssemblyInfo.cs
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\Service.dll
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\Service.pdb
-D:\INTERVIEWS\ENDECO\CVSGraph\CSVGraph\Service\obj\Debug\netcoreapp1.1\Service.csprojResolveAssemblyReference.cache
