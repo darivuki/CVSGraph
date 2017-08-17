@@ -20,13 +20,13 @@ Reads data from a provided (structured) sample file, stores it to a database, an
 
 ## Building, running, installing...
 
-- Open CMD in root folder and dotnet restore. Run dotnet build after that. This should take care of backend packages and assemblies.
+- Open CMD in solution root folder and `dotnet restore`. Run `dotnet build` after that. This should take care of compiling all C# projects.
 
-- Cd into WebClient and exeute npm install (this will take some time since Angular CLI has been added as a dev dependency). 
+- Navigate into WebClient and exeute `npm install` (this will take some time since Angular CLI has been added as a dev dependency). 
 
-- Run npm build after that to package up client side files.
+- Run `npm run build` after that to package up client side files.
 
-- To run the application WebService and WebClient must be up and running. They can be started using Visual Studio or by executing dotnet run in their respective roots
+- To run the application WebService and WebClient must be up and running. Do so by executing `dotnet run` in each project's directory
 
 ## NOTE
 Only few tests have been added to the solution using xUnit and Moq to prove the concept. This goes for client side javascript code as well. Error handling has also not been added for simplicity.
