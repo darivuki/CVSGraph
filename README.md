@@ -22,7 +22,7 @@ Reads data from a provided (structured) sample file, stores it to a database, an
 
 - Open CMD in solution root folder and `dotnet restore`. Run `dotnet build` after that. This should take care of compiling all C# projects.
 
-- Navigate into WebClient and exeute `npm install` (this will take some time since Angular CLI has been added as a dev dependency). 
+- Navigate into WebClient and execute `npm install` (this will take some time since Angular CLI has been added as a dev dependency). 
 
 - Run `npm run build` after that to package up client side files.
 
