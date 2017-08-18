@@ -1,4 +1,4 @@
-# CVSGraph #
+# CSVGraph # 
 
 Reads data from a provided (structured) sample file, stores it to a database, and displays the data in a graph format.
 
